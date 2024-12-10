@@ -1,0 +1,39 @@
+.Header {
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+
+    .HeaderInner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .Logo {
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .HeaderRight {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            .HeaderNavigation {
+                display: flex;
+                gap: 20px;
+
+                a {
+                    font-weight: 400;
+                    transition: color .2s ease;
+
+                    &:hover {
+                        color: var(--grey);
+                    }
+                }
+
+            }
+        }
+    }
+}

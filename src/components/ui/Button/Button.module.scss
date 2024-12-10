@@ -1,0 +1,28 @@
+.Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    width: 190px;
+    height: 46px;
+    background: var(--green);
+    color: var(--black);
+    transition: background-color .2s ease;
+    padding: 0 30px;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    &:hover {
+        background-color: var(--green-light);
+    }
+
+    &.FullWidthButton {
+        width: 100%;
+    }
+
+    &[disabled] {
+        cursor: auto;
+        background-color: var(--light-grey);
+    }
+}
