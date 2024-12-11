@@ -1,0 +1,36 @@
+.calendarContainer {
+    max-width: 400px;
+    background: #1e1e1e;
+    color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendarDay {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.calendarDay.active {
+    background-color: #00ff6a;
+    color: #000;
+}
+
+.calendarDay.empty {
+    visibility: hidden;
+}

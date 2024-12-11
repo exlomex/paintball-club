@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 100px;
-    width: 190px;
+    min-width: 190px;
     height: 46px;
     background: var(--green);
     color: var(--black);
@@ -12,6 +12,7 @@
 
     font-size: 20px;
     font-weight: 400;
+    white-space: nowrap;
 
     &:hover {
         background-color: var(--green-light);

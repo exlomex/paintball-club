@@ -4,6 +4,8 @@
     top: 0;
     right: 0;
     width: 100%;
+    background: rgba(15, 15, 15, 0.7);
+    z-index: 100000;
 
     .HeaderInner {
         display: flex;
