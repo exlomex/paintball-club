@@ -1,6 +1,7 @@
 .MainContent {
-    padding-bottom: 40px;
+    position: relative;
     padding-top: var(--header-height);
+    padding-bottom: calc(var(--footer-height) + 30px);
 
     .MainSection {
         position: relative;

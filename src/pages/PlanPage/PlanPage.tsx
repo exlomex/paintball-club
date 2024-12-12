@@ -8,6 +8,7 @@ import {Modal} from "@/components/ui/Modal";
 import {useAppDispatch} from "@/hooks/useAppDispatch";
 import {UserSliceActions} from "@/store/reducers/UserSlice";
 import {PlanBooking} from "@/components/PlanBooking";
+import {Footer} from "@/components/Footer";
 
 interface PlanPageProps {
     className?: string;

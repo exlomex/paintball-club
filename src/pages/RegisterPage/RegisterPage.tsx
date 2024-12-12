@@ -2,6 +2,7 @@ import { classNames } from '@/lib/classNames';
 import cls from './RegisterPage.module.scss';
 import {Header} from "@/components/Header";
 import {RegisterForm} from "@/components/RegisterForm";
+import {Footer} from "@/components/Footer";
 
 interface RegisterPageProps {
     className?: string;

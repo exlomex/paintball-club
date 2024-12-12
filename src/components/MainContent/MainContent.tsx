@@ -11,6 +11,7 @@ import AboutFirst from '@/assets/aboutFirst.png'
 import AboutSecond from '@/assets/AboutSecond.png'
 import AboutHelmets from '@/assets/helmets.png'
 import PersonFull from '@/assets/personFull.png'
+import {Footer} from "@/components/Footer";
 
 interface MainContentProps {
     className?: string;
@@ -117,7 +118,7 @@ export const MainContent = (props: MainContentProps) => {
                 </MainContainer>
             </section>
 
-
+            <Footer/>
         </div>
     )
 };
