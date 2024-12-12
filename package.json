@@ -12,6 +12,7 @@
     "@types/node": "^16.18.121",
     "@types/react": "^18.3.14",
     "@types/react-dom": "^18.3.3",
+    "ajv-keywords": "^5.1.0",
     "axios": "^1.7.9",
     "date-fns": "^4.1.0",
     "jwt-decode": "^4.0.0",
@@ -51,7 +52,7 @@
     ]
   },
   "devDependencies": {
-    "ajv": "^7.2.4",
+    "ajv": "^8.17.1",
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.2.1"
   }
