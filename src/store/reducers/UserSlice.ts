@@ -3,7 +3,6 @@ import {tokenInfoTypes, UserRoles, UserSliceSchema} from "./UserSliceSchema";
 import {USER_ACCESS_TOKEN_KEY} from "@/const/localStorage";
 import {jwtDecode} from "jwt-decode";
 import {loginByUsername, UserData} from "../services/loginByUsername";
-import {str} from "ajv";
 import {FetchAvailibleDates} from "@/store/services/fetchAvailibleDates";
 
 
