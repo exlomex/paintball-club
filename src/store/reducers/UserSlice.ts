@@ -3,12 +3,18 @@ import {tokenInfoTypes, UserRoles, UserSliceSchema} from "./UserSliceSchema";
 import {USER_ACCESS_TOKEN_KEY} from "@/const/localStorage";
 import {jwtDecode} from "jwt-decode";
 import {loginByUsername, UserData} from "../services/loginByUsername";
+import {str} from "ajv";
+import {FetchAvailibleDates} from "@/store/services/fetchAvailibleDates";
 
 
 const initialState: UserSliceSchema = {
     isAuth: false,
     role: UserRoles.GUEST,
-    loginIsLoading: false
+    loginIsLoading: false,
+    modalIsOpen: false,
+    activeDate: Date.now(),
+    availibleDatas: [],
+    availibleDatasLoading: false
 };
 
 export const UserSlice = createSlice({
@@ -38,6 +44,21 @@ export const UserSlice = createSlice({
                 state.role = tokenInfo.role;
             }
         },
+        setModalIsOpen: (state: UserSliceSchema, action: PayloadAction<boolean>) => {
+            state.modalIsOpen = action.payload;
+        },
+        setCurrentPlanInfo: (state: UserSliceSchema, action: PayloadAction<{id: number, title: string, features: string[], price: number}>) => {
+            state.currentPlanInfo = action.payload;
+        },
+        setActiveDate: (state: UserSliceSchema, action: PayloadAction<number>) => {
+            state.activeDate = action.payload;
+        },
+        setAvailibleDatas: (state: UserSliceSchema, action: PayloadAction<string[]>) => {
+            state.availibleDatas = action.payload;
+        },
+        setSelectedTime: (state: UserSliceSchema, action: PayloadAction<number>) => {
+            state.selectedTime = action.payload;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -51,6 +72,16 @@ export const UserSlice = createSlice({
             .addCase(loginByUsername.rejected, (state, action) => {
                 state.loginIsLoading = false;
                 state.loginError = action.payload;
+            })
+
+            .addCase(FetchAvailibleDates.pending, (state) => {
+                state.availibleDatasLoading = true;
+            })
+            .addCase(FetchAvailibleDates.fulfilled, (state) => {
+                state.availibleDatasLoading = false;
+            })
+            .addCase(FetchAvailibleDates.rejected, (state, action) => {
+                state.availibleDatasLoading = false;
             });
     },
 });

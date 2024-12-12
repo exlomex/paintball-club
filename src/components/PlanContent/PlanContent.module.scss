@@ -1,0 +1,136 @@
+.PlanContent {
+    margin-top: var(--header-height);
+
+    .PlanInner {
+        .PlanTitle {
+            line-height: 110%;
+            font-weight: 900;
+            font-size: 40px;
+            span { font-weight: 200;
+                margin-right: 10px;}
+
+            margin-bottom: 30px;
+        }
+
+        .PlanContentWrapper {
+            display: flex;
+            gap: 50px;
+        }
+
+        .PlanLeftContent {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .PlanImage {
+            }
+
+            .PlanExtra {
+                .PlanExtraTitle {
+                    font-weight: 600;
+                    font-size: 32px;
+                    margin-bottom: 25px;
+                }
+
+                .PlanExtraWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .PlanExtraElement {
+                        padding-left: 23px;
+                        position: relative;
+                        font-weight: 300;
+                        font-size: 20px;
+
+                        span {
+                            margin-left: 10px;
+                            font-weight: 600;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            height: 8px;
+                            width: 8px;
+                            aspect-ratio: 1 / 1;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0;
+                            background-color: var(--grey-middle);
+                        }
+                    }
+                }
+            }
+        }
+
+        .PlanRightContent {
+            width: 450px;
+
+            .FeaturesTitle {
+                margin-bottom: 30px;
+                font-weight: 600;
+                font-size: 32px;
+            }
+
+            .PlanFeatures {
+                margin-bottom: 30px;
+                min-height: 150px;
+                max-height: 900px;
+                overflow: auto;
+                padding-right: 7px;
+
+                .PlanFeature {
+                    position: relative;
+                    padding-left: 23px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                    line-height: 110%;
+
+                    &:last-child {
+                        margin-bottom: 5px;
+                    }
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        height: 8px;
+                        width: 8px;
+                        aspect-ratio: 1 / 1;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        background-color: var(--grey-middle);
+                    }
+                }
+            }
+
+            .PlanExtra {
+                margin-bottom: 40px;
+                .ExtraTitle {
+                    font-weight: 500;
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                }
+
+                .ExtraDescription {
+                    font-weight: 300;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    span:last-child {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .bookingError {
+            font-weight: 300;
+            margin-top: 20px;
+            color: var(--green);
+        }
+    }
+}

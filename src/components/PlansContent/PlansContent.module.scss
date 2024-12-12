@@ -1,0 +1,119 @@
+.PlansContent {
+    padding-top: var(--header-height);
+
+    .PlansInner {
+        .PlansTitle {
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        .PlansWrapper {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .PlanCard {
+                border-radius: 24px;
+                width: 415px;
+                max-height: 700px;
+                padding: 30px 35px;
+                background-color: var(--grey-dark);
+
+                .PlanUpperLine {
+                    display: flex;
+                    gap: 30px;
+                    align-items: center;
+                    margin-bottom: 30px;
+
+                    .PlanCount {
+                        font-weight: 700;
+                        font-size: 96px;
+                        color: var(--grey-middle);
+                    }
+
+                    .PlanTitle {
+                        line-height: 110%;
+
+                        font-weight: 900;
+                        font-size: 40px;
+                        span { font-weight: 200;}
+                    }
+                }
+
+                .PlanFeatures {
+                    margin-bottom: 30px;
+                    min-height: 150px;
+                    max-height: 266px;
+                    overflow: auto;
+                    padding-right: 7px;
+
+                    .PlanFeature {
+                        position: relative;
+                        padding-left: 23px;
+                        font-weight: 400;
+                        font-size: 16px;
+                        margin-bottom: 20px;
+                        line-height: 110%;
+
+                        &:last-child {
+                            margin-bottom: 5px;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            height: 8px;
+                            width: 8px;
+                            aspect-ratio: 1 / 1;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0;
+                            background-color: var(--grey-middle);
+                        }
+                    }
+                }
+
+                .PlanExtra {
+                    margin-bottom: 30px;
+                    .ExtraTitle {
+                        margin-bottom: 20px;
+                    }
+
+                    .ExtraWrapper {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+
+                .PlanPrice {
+                    margin-bottom: 25px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3 {
+                        font-weight: 500;
+                        font-size: 20px;
+                    }
+
+                    p {
+                        font-weight: 600;
+                        font-size: 16px;
+                    }
+                }
+
+                .PlansButton {
+                    background-color: var(--white);
+                    color: var(--black);
+
+                    &:hover {
+                        background-color: var(--grey);
+                    }
+                }
+            }
+        }
+    }
+}

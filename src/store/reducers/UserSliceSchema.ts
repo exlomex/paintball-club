@@ -11,6 +11,12 @@ export interface UserSliceSchema {
     role: UserRoles;
     loginError?: string;
     loginIsLoading: boolean;
+    modalIsOpen: boolean,
+    currentPlanInfo?: {id: number, title: string, features: string[], price: number}
+    activeDate: number
+    availibleDatas: string[]
+    selectedTime?: number;
+    availibleDatasLoading: boolean
 }
 
 export interface tokenInfoTypes extends JwtPayload {

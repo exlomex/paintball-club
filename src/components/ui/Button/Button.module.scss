@@ -24,6 +24,7 @@
 
     &[disabled] {
         cursor: auto;
-        background-color: var(--light-grey);
+        background-color: var(--scroll-main);
+        color: var(--scroll-back);
     }
 }

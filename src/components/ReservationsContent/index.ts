@@ -1,0 +1,1 @@
+export {ReservationsContent} from './ReservationsContent'

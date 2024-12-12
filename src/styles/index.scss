@@ -21,10 +21,38 @@ body {
   --grey: #C4C4C4;
   --grey-dark: #1D1D1D;
   --grey-middle: #373737;
+  --grey-darkness: #1A1A1A;
   --green: #B0CB1F;
   --green-light: #AFBA75;
   --red: #a10b1b;
+  --field: #313131;
+  --table-field: #696969;
+
+  --scroll-main: #1f1f1f;
+  --scroll-back: #363636;
+  --scroll-hover: #3f3f3f;
 
   // consts
   --header-height: 86px;
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-main);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-back);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-hover);
 }

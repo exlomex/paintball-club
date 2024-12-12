@@ -5,7 +5,7 @@ import {MainContainer} from "@/components/MainContainer";
 import MainBG from '@/assets/mainBG.jpg'
 import MainPerson from '@/assets/person.png'
 import {Button} from "@/components/ui/Button";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import React, {ReactElement} from "react";
 import AboutFirst from '@/assets/aboutFirst.png'
 import AboutSecond from '@/assets/AboutSecond.png'
@@ -32,6 +32,11 @@ export const MainContent = (props: MainContentProps) => {
         {count: (<p className={cls.GameScriptCount}>03</p>) ,title: (<p className={cls.GameScriptTitle}>Командный бой</p>), description: (<p className={cls.GameScriptDescription}>Просто сражение двух команд до полного превосходства одной из них. Наиболее распространённый сценарий. Действуют обычно в паре, при этом один участник прикрывает второго. Условием победы выступает поддержание дисциплины среди членов команды.</p>)},
     ]
 
+    const navigate = useNavigate()
+    const onMoreClickHandler = () => {
+        navigate(`/plans`, {replace: true})
+    }
+
     return (
         <div className={classNames(cls.MainContent, {}, [className])}>
             <Header/>
@@ -45,7 +50,7 @@ export const MainContent = (props: MainContentProps) => {
 
                         <div className={cls.MainRightContent}>
                             <p className={cls.MainTitle}>УСТАЛ ОТ СКУЧНЫХ <br/> И УНЫЛЫХ ВЫХОДНЫХ? <br/> ТОГДА БЕГОМ НА <span>АРЕНУ!</span></p>
-                            <Button><Link to={'/plans'}>Принять участие</Link></Button>
+                            <Button onClick={onMoreClickHandler}>Принять участие</Button>
                         </div>
                     </div>
                 </MainContainer>
@@ -58,7 +63,7 @@ export const MainContent = (props: MainContentProps) => {
                             <h2 className={cls.ClubTitle}>Мы - профессиональная <br/> команда пейнтболистов</h2>
 
                             <p className={cls.ClubDescription}>У нас в клубе вы встретитесь с увлекательной и захватывающей игрой. Предлагаем насладиться совершенно уникальным спортивным развлечением, которое объединяет дружбу, командный дух и стремление к победе.У нас в клубе ты встретишься с увлекательной и захватывающей игрой пейнтбола.</p>
-                            <Button><Link to={'plans'}>Принять участие</Link></Button>
+                            <Button onClick={onMoreClickHandler}>Принять участие</Button>
                         </div>
 
                         <div className={cls.ClubLeftContent}>
@@ -74,8 +79,8 @@ export const MainContent = (props: MainContentProps) => {
                         <h2 className={cls.AboutTitle}>В <span>игре</span> вас ждет</h2>
 
                         <div className={cls.AboutContent}>
-                            {aboutContent.map(item => (
-                                <div className={cls.AboutCard}>
+                            {aboutContent.map((item, index) => (
+                                <div key={index} className={cls.AboutCard}>
                                     {item.image}
                                     <div className={cls.AboutCardWrapper}>
                                         {item.title}
@@ -94,8 +99,8 @@ export const MainContent = (props: MainContentProps) => {
                         <h2 className={cls.GameScriptMainTitle}>Сценарии <span>игры</span></h2>
 
                         <div className={cls.GameScriptContent}>
-                            {GameScriptContent.map(item => (
-                                <div className={cls.GameScriptCard}>
+                            {GameScriptContent.map((item, index) => (
+                                <div key={index} className={cls.GameScriptCard}>
                                     <div className={cls.GameScriptCardWrapper}>
                                         {item.count}
                                         {item.title}
@@ -105,7 +110,7 @@ export const MainContent = (props: MainContentProps) => {
                                 </div>
                             ))}
                         </div>
-                        <Button><Link to={'/plans'}>Принять участие</Link></Button>
+                        <Button onClick={onMoreClickHandler}>Принять участие</Button>
 
                     </div>
 

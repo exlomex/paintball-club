@@ -3,10 +3,10 @@ import {USER_ACCESS_TOKEN_KEY} from "@/const/localStorage";
 import {StateSchema} from "@/store/config";
 
 export const rtkApi = createApi({
-    tagTypes: ['Review', 'Cart', 'Orders'],
+    tagTypes: ['Reservation'],
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://bbahhlonoggt7fdjcdak.containers.yandexcloud.net',
+        baseUrl: 'https://bba30gjlm2d3h2mm2ug7.containers.yandexcloud.net',
         prepareHeaders: (headers, { getState }) => {
             const token = localStorage.getItem(USER_ACCESS_TOKEN_KEY) || ''
             if (Boolean((getState() as StateSchema).user.isAuth)) {

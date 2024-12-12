@@ -23,13 +23,13 @@ export const Header = (props: HeaderProps) => {
     const AuthNavItems: {title: string, to: string}[] = [
         { title: 'Главная', to: '/' },
         { title: 'Тарифы', to: '/plans' },
-        { title: 'Мои записи', to: '/books' },
+        { title: 'Мои записи', to: '/reservations' },
     ]
 
     const isAuth = useSelector(getUserAuth)
 
     const dispatch = useAppDispatch()
-    const onLogoutClicHandler = () => {
+    const onLogoutClickHandler = () => {
         dispatch(UserSliceActions.logout())
     }
 
@@ -41,13 +41,13 @@ export const Header = (props: HeaderProps) => {
 
                     <div className={cls.HeaderRight}>
                         <nav className={cls.HeaderNavigation}>
-                            {isAuth ?
+                            {!isAuth ?
                                 (
                                     navItems.map((item, index) => <Link key={index} to={item.to}>{item.title}</Link>)
-                                ) : (AuthNavItems.map((item, index) => <Link key={index} to={item.title}>{item.title}</Link>))}
+                                ) : (AuthNavItems.map((item, index) => <Link key={index} to={item.to}>{item.title}</Link>))}
                         </nav>
 
-                        {isAuth ? <Button><Link to={'/login'} state={{ from: window.location.pathname }} className={cls.HeaderAuth}>Авторизация</Link></Button> : <Button onClick={onLogoutClicHandler}>Выйти</Button>}
+                        {!isAuth ? <Button><Link to={'/login'} state={{ from: window.location.pathname }} className={cls.HeaderAuth}>Авторизация</Link></Button> : <Button onClick={onLogoutClickHandler}>Выйти</Button>}
                     </div>
                 </div>
             </MainContainer>

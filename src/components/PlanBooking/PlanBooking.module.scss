@@ -1,0 +1,93 @@
+.PlanBooking {
+    .PlanUpperLine {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .PlanTitle {
+            line-height: 110%;
+            font-weight: 900;
+            font-size: 24px;
+            span { font-weight: 200;
+                margin-right: 10px;}
+        }
+
+        .CloseButton {
+            cursor: pointer;
+            path {transition: fill .3s ease}
+            &:hover { path {fill: var(--green-light)}}
+        }
+    }
+
+    .BookingTimeTitle {
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .AvailibleDatas {
+        margin-bottom: 20px;
+        width: 100%;
+        background-color: var(--grey-dark);
+        border-radius: 12px;
+        padding: 15px;
+        display: flex;
+        justify-content: start;
+        gap: 10px 5px;
+        flex-wrap: wrap;
+
+        &.isLoading {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            width: 24px;
+            height: 24px;
+            border: 3px solid #FFF;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .AvailibleData {
+            cursor: pointer;
+            border-radius: 100px;
+            background-color: var(--field);
+            width: 108px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 400;
+            transition: background-color .3s ease;
+
+            &:hover {
+                background-color: var(--grey-middle);
+            }
+        }
+
+        .ActiveTime {
+            background-color: var(--green);
+            color: var(--black);
+
+            &:hover {
+                background-color: var(--green-light);
+            }
+        }
+    }
+}
