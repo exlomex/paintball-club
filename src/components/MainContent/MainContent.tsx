@@ -5,11 +5,11 @@ import {MainContainer} from "@/components/MainContainer";
 import MainBG from '@/assets/mainBG.jpg'
 import MainPerson from '@/assets/person.png'
 import {Button} from "@/components/ui/Button";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import React, {ReactElement} from "react";
 import AboutFirst from '@/assets/aboutFirst.png'
 import AboutSecond from '@/assets/AboutSecond.png'
-import AboutThird from '@/assets/AboutTHIRD.png'
+import AboutHelmets from '@/assets/helmets.png'
 import PersonFull from '@/assets/personFull.png'
 
 interface MainContentProps {
@@ -23,7 +23,7 @@ export const MainContent = (props: MainContentProps) => {
     const aboutContent: {title: ReactElement, description: ReactElement, image: ReactElement}[] = [
         {image: (<img className={cls.AboutCardImage} src={AboutFirst} alt="firstImage"/>) ,title: (<p className={cls.AboutCardTitle}><span>Обширная</span> игровая зона</p>), description: (<p className={cls.AboutCardDescription}>Наша локация имеет размер 1000 кв.м2 и на открытом пространстве. Вы можете свободно перемещяться, используя укрытия для защиты или для атаки.</p>)},
         {image: (<img className={cls.AboutCardImage} src={AboutSecond} alt="secondImage"/>) ,title: (<p className={cls.AboutCardTitle}><span>Новейшие</span> маркеры</p>), description: (<p className={cls.AboutCardDescription}>Современные модели со стальными стволами длиной 30 см и диаметром - 20 мм. Имеют эргономичную рукоятку для удобного захвата. Емкость магазина - 360 шариков.</p>)},
-        {image: (<img className={cls.AboutCardImage} src={AboutThird} alt="thirdImage"/>) ,title: (<p className={cls.AboutCardTitle}><span>Удобная</span> экипировка</p>), description: (<p className={cls.AboutCardDescription}>Мы за безопасную игру! Перед игрой все элементы защиты подбираются по размеру.</p>)},
+        {image: (<img className={cls.AboutCardImage} src={AboutHelmets} alt="thirdImage"/>) ,title: (<p className={cls.AboutCardTitle}><span>Удобная</span> экипировка</p>), description: (<p className={cls.AboutCardDescription}>Мы за безопасную игру! Перед игрой все элементы защиты подбираются по размеру.</p>)},
     ]
 
     const GameScriptContent: {title: ReactElement, description: ReactElement, count: ReactElement}[] = [
